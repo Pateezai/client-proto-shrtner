@@ -12,6 +12,7 @@ import {
   Card,
   InputGroup,
   Toast,
+  Accordion,
 } from "react-bootstrap";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -293,10 +294,19 @@ const handleEdit = (id, key) =>{
                         {notice.text1}
                       </Form.Text>
                     </div>
-
                     <Form.Group className="mt-3 d-flex justify-content-center">
                       <Col md={8}>
-                        <Form.Label>Customize</Form.Label>
+                      <Accordion defaultActiveKey="0">
+                        <Accordion.Item className="text-center" eventKey="1">
+                          <Accordion.Header>Customize</Accordion.Header>
+                          <Accordion.Body>
+                          <Form.Label>Customize</Form.Label>
+                            <br />
+                            <p variant="info">
+                            The Regulary Shorten URL will be like this "wwww.Shortener/ASXER.com"
+                            <br />
+                            The Customize will be "www.Shortener/YourCustomization.com"
+                            </p>
                         <Form.Control
                           type="text"
                           placeholder="www.example/customize.com"
@@ -305,11 +315,14 @@ const handleEdit = (id, key) =>{
                           value={inputValue.custom}
                           onChange={handleInputValue}
                         />
+                          </Accordion.Body>
+                        </Accordion.Item>
+                      </Accordion>
                       </Col>
                     </Form.Group>
-                    <div className="mt-2">
+                    {/* <div className="mt-2">
                       <Form.Text className="text-muted"></Form.Text>
-                    </div>
+                    </div> */}
                     <Button
                       variant="primary"
                       type="submit"

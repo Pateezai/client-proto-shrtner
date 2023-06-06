@@ -11,7 +11,7 @@ import Test from '../components/Content/test.jsx'
 const Home = () => {
   return (
     <div>
-      <NavComp/>
+      {/* <NavComp/> */}
       {/* <Content/> */}
       {/* <Sector/> */}
       <Test/>
